@@ -1,9 +1,11 @@
 const mongoose = require('mongoose')
 const studentSchema = new mongoose.Schema({
     email:{
-        type:String
+        type:String,
+        unique:true,
+        required:true
     },
-    stucentName:{
+    studentName:{
         type:String,
         required:true
     },

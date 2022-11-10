@@ -20,10 +20,16 @@ const addSubject = async(req, res)=>{
         console.log(e)
     }
 }
-const test = async(req,res)=>{
+const getAllSubject = async(req,res)=>{
     try{
-        console.log("hi")
+        const subject = await Subject.find()
+        res.status(200).json({
+            subject
+        })
     }
-    catch(e){console.log(e)}
+    catch(e){
+        console.log(e)
+    }
+    
 }
-module.exports = {addSubject,test}
+module.exports = {addSubject,getAllSubject}

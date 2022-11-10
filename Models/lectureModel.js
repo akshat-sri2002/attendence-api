@@ -9,3 +9,4 @@ const lectureSchema = new mongoose.Schema({
         default:Date.now()
     }
 })
+module.exports = new mongoose.model("Lecture",lectureSchema)

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {addSubject, test} = require('../Controllers/subjectController')
+const {addSubject, getAllSubject} = require('../Controllers/subjectController')
 router.route('/addSubject').post(addSubject)
-router.route('/test').get(test)
+router.route('/getAllSubject').get(getAllSubject)
 module.exports = router
