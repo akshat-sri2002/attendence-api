@@ -30,4 +30,26 @@ const enrollStudent = async(req, res)=>{
         console.log(e)
     }
 }
-module.exports = {enrollStudent}
+const getAllStudentBySubjectId = async (req,res)=>{
+    try{
+        const student =await Enroll.find({subjectID:req.body.subjectID}).populate('studentID')
+        res.json({
+            student
+        })
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+const getAllSubjectByStudentId = async (req, res)=>{
+    try{
+        const subject = await Enroll.find({studentID:req.body.studentID}).populate('subjectID')
+        res.json({
+            subject
+        })
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+module.exports = {enrollStudent,getAllStudentBySubjectId,getAllSubjectByStudentId}
